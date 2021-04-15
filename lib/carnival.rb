@@ -1,5 +1,5 @@
 class Carnival
-  attr_reader :name, :rides, :attendees 
+  attr_reader :name, :rides, :attendees
 
   def initialize(name)
     @name = name
@@ -21,5 +21,9 @@ class Carnival
       end
     end
     recommended_rides
+  end
+
+  def admit(attendee)
+    attendees << attendee
   end
 end
