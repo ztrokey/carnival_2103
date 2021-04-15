@@ -16,22 +16,3 @@ RSpec.describe Ride do
     expect(ride.cost).to eq(0)
   end
 end
-
-# pry(main)> attendee = Attendee.new('Bob', 20)
-# #=> #<Attendee:0x00007ff88ea979a8...>
-#
-# pry(main)> attendee.name
-# #=> "Bob"
-#
-# pry(main)> attendee.spending_money
-# #=> 20
-#
-# pry(main)> attendee.interests
-# #=> []
-#
-# pry(main)> attendee.add_interest('Bumper Cars')
-#
-# pry(main)> attendee.add_interest('Ferris Wheel')
-#
-# pry(main)> attendee.interests
-# #=> ["Bumper Cars", "Ferris Wheel"]
