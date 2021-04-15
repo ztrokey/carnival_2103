@@ -14,17 +14,11 @@ RSpec.describe Carnival do
     jeffco_fair = Carnival.new("Jefferson County Fair")
 
     expect(jeffco_fair.name).to eq("Jefferson County Fair")
+    expect(jeffco_fair.rides).to eq([])
   end
 end
 
 
-
-#
-# pry(main)> jeffco_fair.name
-# #=> "Jefferson County Fair"
-#
-# pry(main)> jeffco_fair.rides
-# #=> []
 #
 # pry(main)> ferris_wheel = Ride.new({name: 'Ferris Wheel', cost: 0})
 # #=> #<Ride:0x00007fe59506ede8...>
