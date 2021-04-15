@@ -58,34 +58,32 @@ RSpec.describe Carnival do
 
     expect(jeffco_fair.attendees).to eq([])
   end
+
+  it 'can add attendees' do
+    jeffco_fair = Carnival.new("Jefferson County Fair")
+    ferris_wheel = Ride.new({name: 'Ferris Wheel', cost: 0})
+    bumper_cars = Ride.new({name: 'Bumper Cars', cost: 10})
+    scrambler = Ride.new({name: 'Scrambler', cost: 15})
+    jeffco_fair.add_ride(ferris_wheel)
+    jeffco_fair.add_ride(bumper_cars)
+    jeffco_fair.add_ride(scrambler)
+    bob = Attendee.new("Bob", 0)
+    bob.add_interest('Ferris Wheel')
+    bob.add_interest('Bumper Cars')
+    sally = Attendee.new('Sally', 20)
+    sally.add_interest('Bumper Cars')
+    johnny = Attendee.new("Johnny", 5)
+    johnny.add_interest('Bumper Cars')
+    jeffco_fair.admit(bob)
+    jeffco_fair.admit(sally)
+    jeffco_fair.admit(johnny)
+
+    expect(jeffco_fair.attendees).to eq([bob, sally, johnny])
+  end
 end
 
-# pry(main)> bob = Attendee.new("Bob", 0)
-# #=> #<Attendee:0x00007ffab70bfce8...>
-#
-# pry(main)> bob.add_interest('Ferris Wheel')
-#
-# pry(main)> bob.add_interest('Bumper Cars')
-#
-# pry(main)> sally = Attendee.new('Sally', 20)
-# #=> #<Attendee:0x00007ffab69069e8...>
-#
-# pry(main)> sally.add_interest('Bumper Cars')
-#
-# pry(main)> johnny = Attendee.new("Johnny", 5)
-# #=> #<Attendee:0x00007ffab7172d70...>
-#
-# pry(main)> johnny.add_interest('Bumper Cars')
-#
-# pry(main)> jeffco_fair.admit(bob)
-#
-# pry(main)> jeffco_fair.admit(sally)
-#
-# pry(main)> jeffco_fair.admit(johnny)
-#
-# pry(main)> jeffco_fair.attendees
-# #=> [#<Attendee:0x00007ffab70bfce8...>, #<Attendee:0x00007ffab69069e8...>, #<Attendee:0x00007ffab7172d70...>]
-#
+
+
 # #Attendees are added even if they don't have enough money for all/any exhibits.
 #
 # pry(main)> jeffco_fair.attendees_by_ride_interest
