@@ -14,17 +14,11 @@ RSpec.describe Attendee do
 
     expect(attendee.name).to eq("Bob")
     expect(attendee.spending_money).to eq(20)
+    expect(attendee.interests).to eq([])
   end
 end
 
-# pry(main)> attendee = Attendee.new('Bob', 20)
-# #=> #<Attendee:0x00007ff88ea979a8...>
-#
-# pry(main)> attendee.name
-# #=> "Bob"
-#
-# pry(main)> attendee.spending_money
-# #=> 20
+
 #
 # pry(main)> attendee.interests
 # #=> []
