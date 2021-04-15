@@ -9,12 +9,16 @@ RSpec.describe Carnival do
 
     expect(jeffco_fair).to be_instance_of(Carnival)
   end
+
+  it 'has attributes' do
+    jeffco_fair = Carnival.new("Jefferson County Fair")
+
+    expect(jeffco_fair.name).to eq("Jefferson County Fair")
+  end
 end
 
 
-## Iteration 2
-# pry(main)> jeffco_fair = Carnival.new("Jefferson County Fair")
-# #=> #<Carnival:0x00007fe593a28728...>
+
 #
 # pry(main)> jeffco_fair.name
 # #=> "Jefferson County Fair"
