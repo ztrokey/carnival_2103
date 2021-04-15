@@ -25,10 +25,3 @@ RSpec.describe Attendee do
     expect(attendee.interests).to eq(["Bumper Cars", "Ferris Wheel"])
   end
 end
-
-# pry(main)> attendee.add_interest('Bumper Cars')
-#
-# pry(main)> attendee.add_interest('Ferris Wheel')
-#
-# pry(main)> attendee.interests
-# #=> ["Bumper Cars", "Ferris Wheel"]
