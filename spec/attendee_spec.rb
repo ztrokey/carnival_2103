@@ -16,13 +16,16 @@ RSpec.describe Attendee do
     expect(attendee.spending_money).to eq(20)
     expect(attendee.interests).to eq([])
   end
+
+  it 'can add interests to array' do
+    attendee = Attendee.new('Bob', 20)
+    attendee.add_interest('Bumper Cars')
+    attendee.add_interest('Ferris Wheel')
+
+    expect(attendee.interests).to eq(["Bumper Cars", "Ferris Wheel"])
+  end
 end
 
-
-#
-# pry(main)> attendee.interests
-# #=> []
-#
 # pry(main)> attendee.add_interest('Bumper Cars')
 #
 # pry(main)> attendee.add_interest('Ferris Wheel')
