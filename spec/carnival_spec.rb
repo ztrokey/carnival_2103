@@ -100,21 +100,14 @@ RSpec.describe Carnival do
     jeffco_fair.admit(sally)
     jeffco_fair.admit(johnny)
 
-    expect(jeffco_fair.attendees_by_ride_interest).to eq({:ferris_wheel => [bob], :bumper_cars => [bob, sally, johnny], :scrambler => []})
+    expect(jeffco_fair.ride_hash_keys).to eq([ferris_wheel, bumper_cars, scrambler])
+    # expect(jeffco_fair.keys_and_interests).to eq([])
+    expect(jeffco_fair.ride_and_attendee).to eq([])
+    expect(jeffco_fair.attendees_by_ride_interest).to eq(ferris_wheel => "interested attendee", bumper_cars => "interested attendee", scrambler => "interested attendee")
+    # expect(jeffco_fair.attendees_by_ride_interest).to eq({:ferris_wheel => [bob], :bumper_cars => [bob, sally, johnny], :scrambler => []})
   end
 end
 
-
-
-# #Attendees are added even if they don't have enough money for all/any exhibits.
-#
-# pry(main)> jeffco_fair.attendees_by_ride_interest
-# #=> {
-# #    #<Ride:0x00007ffab5a3d3a8...> => [#<Attendee:0x00007ffab70bfce8...>],
-# #    #<Ride:0x00007ffab714bce8...> => [#<Attendee:0x00007ffab70bfce8...>, #<Attendee:0x00007ffab69069e8...>, #<Attendee:0x00007ffab7172d70...>],
-# #    #<Ride:0x00007ffab71607d8...> => []
-# #  }
-#
 # pry(main)> jeffco_fair.ticket_lottery_contestants(bumper_cars)
 # #=> [#<Attendee:0x00007ffab70bfce8...>, #<Attendee:0x00007ffab7172d70...>]
 #
